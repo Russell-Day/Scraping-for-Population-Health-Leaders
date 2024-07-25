@@ -14,9 +14,8 @@ The primary goal is to create a comprehensive database of population health lead
 ### Methodology:
 1. **Data Sources**: The project utilizes a curated list of acute care hospitals as a starting point (stored in `AcuteHospitalList.csv`).
 2. **Web Scraping**: For each hospital, the system performs targeted web searches to identify relevant information about population health leaders.
-3. **AI-Powered Analysis**: Leveraging Google's Gemini 1.5 AI model, the project processes search results to extract and validate information about population health leaders.
-4. **Data Cleaning**: The collected data undergoes cleaning and standardization to ensure consistency and accuracy.
-5. **Continuous Updates**: The process is designed to run incrementally, allowing for regular updates and expansion of the database.
+3. **Cleaning Webpages**: Each webpage will be cleaned so that the Gemini 1.5 pro model can more easily extract the information and reduce token usage. 
+4. **AI-Powered Analysis**: Leveraging Google's Gemini 1.5 AI model, the project processes search results to extract and validate information about population health leaders.
 
 ### Key Information Collected:
 For each identified population health leader, the project aims to collect:
@@ -31,6 +30,7 @@ For each identified population health leader, the project aims to collect:
 - Respecting privacy and data protection regulations
 - Managing API rate limits and optimizing data collection efficiency
 - Handling variations in how population health roles are titled across different organizations
+- Currently this project only is able to return a list of names from each hospital and manual sorting is needed to be done
 
 ## Table of Contents
 - [Installation](#installation)
@@ -38,8 +38,6 @@ For each identified population health leader, the project aims to collect:
 - [Project Structure](#project-structure)
 - [Data Collection Process](#data-collection-process)
 - [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -47,8 +45,8 @@ To set up this project, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/population-health-leaders-data.git
-cd population-health-leaders-data
+git clone https://github.com/Russell-Day/Scraping-for-Population-Health-Leaders.git
+cd Scraping-for-Population-Health-Leaders
 
 # Install required Python packages
 pip install pandas google-generativeai requests ratelimit
@@ -81,7 +79,11 @@ This will start the process of collecting data on population health leaders base
 3. Process the top 3 search results using Google's Gemini 1.5 AI model.
 4. Clean and extract relevant information about population health leaders.
 5. Compile the results into a CSV file (`streaming.csv`) and Excel file (`output.xlsx`).
-6. 
+
+## Next Steps
+- Create a secondary program that is able to sort through the collected names and validate their population health leader status
+- Find their linked in and compile into an excel file
+
 ## Features
 
 - **Automated Web Searching**: Utilizes Google Custom Search API to find relevant information on population health leaders for each hospital.
