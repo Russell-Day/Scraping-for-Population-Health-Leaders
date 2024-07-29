@@ -11,7 +11,7 @@ hospital_name_df = pd.read_csv("AcuteHospitalList.csv", usecols=["NAME"])
 print(hospital_name_df)
 
 # takes those pubmed ids and puts it into a 
-hospital_list = hospital_name_df["NAME"].tolist()[800:900]
+hospital_list = hospital_name_df["NAME"].tolist()[900:1000]
 
 # different variables that want to be accounted for
 hospital_name = []
