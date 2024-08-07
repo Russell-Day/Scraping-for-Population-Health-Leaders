@@ -11,7 +11,7 @@ hospital_name_df = pd.read_csv("AcuteHospitalList.csv", usecols=["NAME"])
 print(hospital_name_df)
 
 # takes those pubmed ids and puts it into a 
-hospital_list = hospital_name_df["NAME"].tolist()[900:1000]
+hospital_list = hospital_name_df["NAME"].tolist()[1000:1200]
 
 # different variables that want to be accounted for
 hospital_name = []
@@ -61,7 +61,7 @@ for hospitals in hospital_list:
     search[2]["pop_health"].append(hospital_3_future.result())
 
     df = pd.DataFrame(output_dict)
-    df.to_csv("streaming.csv")
+    df.to_csv("streaming/streaming.csv")
 
     run_num += 1
     print(f"Run number: {run_num}, Time: {time.time() - start_time}, Hospital: {hospitals}")
